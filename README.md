@@ -75,7 +75,6 @@ The FPU architecture consists of 5 distinct functional layers designed to isolat
 │   └──────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────┘
 
-
 ---
 
 ## 📈 Operating Frequency Bounds (100 MHz - 1 GHz)
