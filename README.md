@@ -39,7 +39,7 @@ The FPU architecture consists of 5 distinct functional layers designed to isolat
 ---
 
 ## 📊 System Dataflow Diagram
-
+```text
 +--------------------------------------------------------------------------+
 |                       DIGITAL HOST SYSTEM: CPU / GPU                     |
 +--------------------------------------------------------------------------+
@@ -73,7 +73,7 @@ The FPU architecture consists of 5 distinct functional layers designed to isolat
 +----------------------------------------------------------+
 |  +1 HARDWARE PHASE DRIFT CALIBRATION LINE (SYNC)         |
 +----------------------------------------------------------+
-
+```
 Description:
 *Host Communication: The digital CPU/GPU writes matrix data—specifically amplitude and phase parameters—into the FPU's Input Memory (IMEM).
 *IMEM-DDS Stream: The IMEM sends a wide-bus, 1 GHz parallel data stream to the Direct Digital Synthesis (DDS) generators and drivers.
