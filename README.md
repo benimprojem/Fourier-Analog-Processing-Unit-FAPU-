@@ -75,13 +75,13 @@ The FPU architecture consists of 5 distinct functional layers designed to isolat
 +----------------------------------------------------------+
 ```
 Description:
-*Host Communication: The digital CPU/GPU writes matrix data—specifically amplitude and phase parameters—into the FPU's Input Memory (IMEM).
-*IMEM-DDS Stream: The IMEM sends a wide-bus, 1 GHz parallel data stream to the Direct Digital Synthesis (DDS) generators and drivers.
-*DDS Wave Generation: The DDS units synthesize phase- and amplitude-modulated RF sine waves based on the input data.
-*Core Computation: The generated sine waves pass through the Passive Analog Interference Core. This is a matrix of laser-trimmed, high-precision resistors where calculations occur instantly ($O(1)$) through the constructive and destructive interference of the waves.
-*Signal Conditioning: The resulting complex "Super-Wave" is directed to analog filters and Low-Noise Amplifiers (LNAs) which isolate the frequency-domain results and boost signal strength without adding noise.
-*OMEM-Host Transition: High-speed Analog-to-Digital Converters (ADCs) digitize the conditioned analog signals, writing the output data into the Output Memory (OMEM).
-Final Output: The host system reads the finalized calculation results from the OMEM asynchronously, allowing it to prepare the next computation simultaneously.
+* Host Communication: The digital CPU/GPU writes matrix data—specifically amplitude and phase parameters—into the FPU's Input Memory (IMEM).
+* IMEM-DDS Stream: The IMEM sends a wide-bus, 1 GHz parallel data stream to the Direct Digital Synthesis (DDS) generators and drivers.
+* DDS Wave Generation: The DDS units synthesize phase- and amplitude-modulated RF sine waves based on the input data.
+* Core Computation: The generated sine waves pass through the Passive Analog Interference Core. This is a matrix of laser-trimmed, high-precision resistors where calculations occur instantly ($O(1)$) through the constructive and destructive interference of the waves.
+* Signal Conditioning: The resulting complex "Super-Wave" is directed to analog filters and Low-Noise Amplifiers (LNAs) which isolate the frequency-domain results and boost signal strength without adding noise.
+* OMEM-Host Transition: High-speed Analog-to-Digital Converters (ADCs) digitize the conditioned analog signals, writing the output data into the Output Memory (OMEM).
+* Final Output: The host system reads the finalized calculation results from the OMEM asynchronously, allowing it to prepare the next computation simultaneously.
 
 >The +1 Hardware Phase Drift Calibration Line is a reference signal that runs throughout the processor, calibrating for phase drift and ensuring all 64 channels stay perfectly synchronized for consistent mathematical accuracy.This updated diagram is much easier to follow and effectively shows how the different parts of the processor work in harmony to achieve the massive, low-power computational advantage of the analog Fourier core.
 ---
